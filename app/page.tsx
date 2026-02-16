@@ -82,8 +82,8 @@ export default function Home() {
         />
 
         {/* Content container */}
-        <div className="relative z-10 w-full h-full flex items-center justify-center">
-          {/* Full-screen Tooth Animation Background */}
+        <div className="relative z-10 w-full h-full flex flex-col items-center justify-center">
+          {/* Full-screen Tooth Animation Background - behind everything */}
           <div className="absolute inset-0 w-full h-full">
             <motion.div
               style={{
@@ -96,80 +96,44 @@ export default function Home() {
             </motion.div>
           </div>
 
-          {/* Hero Text Overlay - Right side */}
-          <div className="relative z-20 w-full h-full flex items-center justify-end">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="flex flex-col gap-6 md:gap-8 px-8 md:px-16 py-32 max-w-xl"
-            >
-              <div>
-                <motion.p
-                  className="text-sm md:text-base font-medium text-cyan-600 dark:text-cyan-400 uppercase tracking-widest mb-4"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.3, duration: 0.8 }}
+          {/* Header superimposed on the animation */}
+          <header className="absolute top-0 left-0 right-0 z-20 pt-8 md:pt-10 pb-6 md:pb-8 px-8 md:px-16 lg:px-24">
+            <div className="max-w-6xl mx-auto flex items-center justify-between">
+              <a href="#" className="flex items-center gap-2 group">
+                <span className="text-xl md:text-2xl font-light tracking-tight text-white drop-shadow-lg">
+                  OrthoLuxe
+                </span>
+              </a>
+              <nav className="flex items-center gap-6 md:gap-10">
+                <a
+                  href="#services"
+                  className="text-sm font-medium text-white/90 hover:text-white transition-colors drop-shadow-md"
                 >
-                  Next Generation Dental Excellence
-                </motion.p>
-
-                <motion.h1
-                  className="text-5xl md:text-7xl font-light tracking-tight text-slate-900 dark:text-white mb-6 leading-tight"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4, duration: 0.8 }}
+                  Services
+                </a>
+                <a
+                  href="#about"
+                  className="text-sm font-medium text-white/90 hover:text-white transition-colors drop-shadow-md"
                 >
-                  Precision. <span className="text-cyan-600 dark:text-cyan-400">Technology.</span> Confidence.
-                </motion.h1>
-
-                <motion.p
-                  className="text-lg md:text-xl text-slate-600 dark:text-slate-300 mb-8 leading-relaxed"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5, duration: 0.8 }}
+                  About
+                </a>
+                <a
+                  href="#contact"
+                  className="text-sm font-medium text-white/90 hover:text-white transition-colors drop-shadow-md"
                 >
-                  Experience the future of dental care. Where advanced technology meets luxurious comfort in every smile.
-                </motion.p>
-              </div>
-
-              {/* CTA Button */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.6, duration: 0.8 }}
-              >
-                <button className="group relative px-8 py-4 bg-linear-to-r from-cyan-600 to-blue-600 dark:from-cyan-500 dark:to-blue-500 text-white font-medium rounded-full overflow-hidden transition-all duration-300 hover:shadow-2xl hover:scale-105">
-                  <span className="relative z-10 flex items-center gap-2">
-                    Schedule Consultation
-                    <motion.span
-                      animate={{ x: [0, 4, 0] }}
-                      transition={{
-                        duration: 1.5,
-                        repeat: Infinity,
-                      }}
-                    >
-                      →
-                    </motion.span>
-                  </span>
-                  <div className="absolute inset-0 bg-linear-to-r from-blue-700 to-cyan-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  Contact
+                </a>
+                <button className="px-4 py-2 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-md text-white text-sm font-medium border border-white/30 transition-all">
+                  Book a visit
                 </button>
-              </motion.div>
-
-              {/* Trust indicator */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.7, duration: 0.8 }}
-                className="flex items-center gap-4 text-sm text-slate-600 dark:text-slate-400"
-              >
-                <div className="w-12 h-12 rounded-full bg-linear-to-br from-cyan-100 to-blue-100 dark:from-cyan-900 dark:to-blue-900 flex items-center justify-center">
-                  ✓
-                </div>
-                <span>10+ Years of Excellence | 50,000+ Happy Patients</span>
-              </motion.div>
-            </motion.div>
-          </div>
+              </nav>
+            </div>
+            {/* Glass bar so the tooth shows through subtly */}
+            <div
+              className="absolute inset-0 -z-10 bg-linear-to-b from-black/30 via-black/10 to-transparent backdrop-blur-[6px]"
+              aria-hidden
+            />
+          </header>
         </div>
 
         {/* Scroll indicator */}
