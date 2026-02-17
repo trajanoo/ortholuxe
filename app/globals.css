@@ -23,11 +23,6 @@
   }
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
 html {
   scroll-behavior: smooth;
@@ -51,6 +46,7 @@ body {
   .smooth-transition {
     @apply transition-all duration-300 ease-in-out;
   }
+
 
   /* 3D perspective */
   .perspective {
@@ -96,6 +92,7 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   opacity: 0.7;
 }
+
 
 /* Animations */
 @keyframes float {

@@ -9,6 +9,7 @@ import {
   StorySection,
   GradientBackground,
 } from './components/ScrollAnimations';
+import TreatmentsSlider from './components/TreatmentsSlider';
 
 export default function Home() {
   const { scrollY } = useScroll();
@@ -106,13 +107,16 @@ export default function Home() {
       <GradientBackground scrollProgress={scrollProgress} />
 
       {/* Hero Section with 3D Tooth */}
-      <section className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-linear-to-b from-cyan-100 to-cyan-600">
+      <section
+        className="relative w-full h-screen flex items-center justify-center overflow-hidden bg-linear-to-b from-cyan-100 to-cyan-600"
+        style={{ touchAction: 'pan-y' }}
+      >
         {/* Background gradient layers */}
-        <div className="absolute inset-0 bg-linear-to-b " />
+        <div className="absolute inset-0 bg-linear-to-b pointer-events-none" />
 
         {/* Subtle animated background elements */}
         <motion.div
-          className="absolute top-0 right-0 w-96 h-96 bg-gradient-radial from-blue-200 to-transparent rounded-full blur-3xl opacity-40"
+          className="absolute top-0 right-0 w-96 h-96 bg-gradient-radial from-blue-200 to-transparent rounded-full blur-3xl opacity-40 pointer-events-none"
           animate={{
             x: [0, 100, 0],
             y: [0, -50, 0],
@@ -124,7 +128,7 @@ export default function Home() {
           }}
         />
         <motion.div
-          className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-radial from-cyan-200 to-transparent rounded-full blur-3xl opacity-30"
+          className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-radial from-cyan-200 to-transparent rounded-full blur-3xl opacity-30 pointer-events-none"
           animate={{
             x: [0, -100, 0],
             y: [0, 50, 0],
@@ -139,7 +143,7 @@ export default function Home() {
         {/* Content container */}
         <div className="relative z-10 w-full h-full flex">
           {/* Full-screen Tooth Animation Background - behind everything */}
-          <div className="absolute inset-0 w-full h-full">
+          <div className="absolute inset-0 w-full h-full pointer-events-none">
             <motion.div
               style={{
                 scale: heroScale,
@@ -226,11 +230,11 @@ export default function Home() {
           }}
         >
           <div className="text-center flex flex-col items-center gap-2">
-            <p className="text-xs text-slate-500 dark:text-slate-400 mb-2 uppercase tracking-widest">
+            <p className="text-xs text-slate-200 dark:text-slate-300 mb-2 uppercase tracking-widest">
               Scroll to explore
             </p>
             <svg
-              className="w-5 h-5 mx-auto text-slate-400 dark:text-slate-500"
+              className="w-5 h-5 mx-auto text-slate-200 dark:text-slate-300"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -249,10 +253,23 @@ export default function Home() {
       {/* Story Sections */}
 
 
-      {/* Footer */}
-      <footer className="relative h-screen w-full  text-white py-16 border-t border-slate-800">
+      {/* Services */}
+      <section id='services' className="relative h-screen w-full flex justify-center items-center text-white mt-10">
+        <div className='h-screen w-[85vw] flex flex-col 2xl:gap-16'>
+          <div className='flex text-black justify-between h-52 items-center'>
+            <div className='flex flex-col text-4xl 2xl:text-5xl font-extralight'>
+              <span className='text-gray-500'>Available</span>
+              <span className='text-black'>Treatments</span>
+            </div>
 
-      </footer>
+            <div className='w-125 2xl:text-lg'>
+              <p>At <span className='font-bold'>OrthoLuxe</span>, we offer a wide range of treatments, from routine cleaning and fillings to advanced procedures like implants and cosmetic dentistry. Our goal is to provide personalized care for all your dental needs.</p>
+            </div>
+          </div>
+
+          <TreatmentsSlider />
+        </div>
+      </section>
     </div>
   );
 }
