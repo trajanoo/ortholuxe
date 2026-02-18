@@ -53,7 +53,7 @@ export default function TreatmentsSlider() {
                             <motion.article
                                 whileHover={{ scale: 1.02 }}
                                 transition={{ type: "spring", stiffness: 200 }}
-                                className="relative h-[350px] 2xl:h-[550px] rounded-2xl bg-cover bg-center p-8 overflow-hidden"
+                                className="relative lg:h-[450px] 2xl:h-[550px] rounded-2xl bg-cover bg-center p-8 overflow-hidden"
                                 style={{ backgroundImage: `url(${item.image})` }}
                             >
                                 {/* Overlay corrigido */}

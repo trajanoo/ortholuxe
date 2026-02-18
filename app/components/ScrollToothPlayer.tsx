@@ -1,6 +1,8 @@
 'use client';
 
 import React, { useEffect, useState, useRef } from 'react';
+import { useMotionValueEvent } from 'framer-motion';
+import { MotionValue } from 'framer-motion';
 import Image from 'next/image';
 
 const TOTAL_FRAMES = 111;
@@ -17,7 +19,7 @@ const PROGRESS_LERP = 0.18;
 export default function ScrollToothPlayer({
   scrollProgress = 0,
 }: {
-  scrollProgress?: number;
+  scrollProgress?: number | MotionValue<number>;
 }) {
   const [displayProgress, setDisplayProgress] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
@@ -25,7 +27,19 @@ export default function ScrollToothPlayer({
   const rafRef = useRef<number>(0);
   const targetRef = useRef(0);
 
-  targetRef.current = Math.min(1, Math.max(0, scrollProgress));
+  useEffect(() => {
+    if (typeof scrollProgress === "number") {
+      targetRef.current = scrollProgress;
+    }
+  }, [scrollProgress]);
+  
+  useMotionValueEvent(
+    scrollProgress as MotionValue<number>,
+    "change",
+    (v) => {
+      targetRef.current = v;
+    }
+  );
 
   const exactFrame = displayProgress * (TOTAL_FRAMES - 1);
   const frameIndex = Math.min(Math.floor(exactFrame), TOTAL_FRAMES - 1);

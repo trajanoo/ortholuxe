@@ -12,24 +12,10 @@ import {
 import TreatmentsSlider from './components/TreatmentsSlider';
 
 export default function Home() {
-  const { scrollY } = useScroll();
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const { scrollY, scrollYProgress } = useScroll();
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  // Track overall scroll progress
-  useEffect(() => {
-    const handleScroll = () => {
-      if (scrollContainerRef.current) {
-        const maxScroll =
-          document.documentElement.scrollHeight - window.innerHeight;
-        const progress = (window.scrollY / maxScroll) * 100;
-        setScrollProgress(progress);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  // Track overall scroll progress (remover apos usar o scrollY)
 
   // Hero tooth scale and opacity
   const heroScale = useTransform(scrollY, (value) => {
@@ -104,7 +90,7 @@ export default function Home() {
       ref={scrollContainerRef}
       className="relative w-full overflow-x-hidden bg-white"
     >
-      <GradientBackground scrollProgress={scrollProgress} />
+      <GradientBackground scrollProgress={scrollYProgress.get()} />
 
       {/* Hero Section with 3D Tooth */}
       <section
@@ -151,7 +137,7 @@ export default function Home() {
               }}
               className="relative w-full h-full"
             >
-              <ScrollToothPlayer scrollProgress={scrollProgress / 100} />
+              <ScrollToothPlayer scrollProgress={scrollYProgress} />
             </motion.div>
           </div>
 
@@ -255,7 +241,7 @@ export default function Home() {
 
       {/* Services */}
       <section id='services' className="relative h-screen w-full flex justify-center items-center text-white mt-10">
-        <div className='h-screen w-[85vw] flex flex-col 2xl:gap-16'>
+        <div className='min-h-screen w-[85vw] flex flex-col 2xl:gap-16'>
           <div className='flex text-black justify-between h-52 items-center'>
             <div className='flex flex-col text-4xl 2xl:text-5xl font-extralight'>
               <span className='text-gray-500'>Available</span>
@@ -271,8 +257,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section id='about' className='relative h-screen w-full flex justify-center items-center text-white mt-10 border-t border-black'>
-        <div className="h-screen w-[85vw] flex flex-col 2xl:gap-16">
+      <section id='about' className='relative min-h-screen w-full flex justify-center text-white mt-10 border-t border-black'>
+        <div className="h-full w-[85vw] flex flex-col 2xl:gap-16">
           <div className='flex text-black justify-between h-52 items-center'>
             <div className='flex flex-col text-4xl 2xl:text-5xl font-extralight'>
               <span className='text-gray-500'>About</span>
@@ -284,6 +270,16 @@ export default function Home() {
               <p className='mt-3'>At OrthoLuxe, our vision is to blend advanced technology with compassionate care to create a welcoming space. We aim to inspire confident, healthy smiles through innovation and personalized treatment.</p>
             </div>
           </div>
+
+          <div className='grid grid-cols-12  h-full w-full gap-x-5 gap-y-5 grid-rows-3 2xl:mt-24'>
+            <div className="bg-gray-500 min-h-[180px] col-span-6 row-span-2 rounded-3xl"></div>
+            <div className="bg-gray-500 min-h-[180px] row-span-3 col-span-3 rounded-3xl"></div>
+            <div className="bg-gray-500 min-h-[180px] col-start-4 col-span-3  row-span-2 rounded-3xl"></div>
+            <div className="bg-gray-500 min-h-[180px] col-start-7 col-span-6 rounded-3xl bg-center bg-cover"
+            style={{ backgroundImage: `url('/braces.png')`}}
+            ></div>
+          </div>  
+
         </div>
       </section>
     </div>
