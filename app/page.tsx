@@ -270,6 +270,22 @@ export default function Home() {
           <TreatmentsSlider />
         </div>
       </section>
+
+      <section id='about' className='relative h-screen w-full flex justify-center items-center text-white mt-10 border-t border-black'>
+        <div className="h-screen w-[85vw] flex flex-col 2xl:gap-16">
+          <div className='flex text-black justify-between h-52 items-center'>
+            <div className='flex flex-col text-4xl 2xl:text-5xl font-extralight'>
+              <span className='text-gray-500'>About</span>
+              <span className='text-black'><span className='text-cyan-600'>Ortho</span>Luxe</span>
+            </div>
+
+            <div className='w-125 2xl:text-lg'>
+              <p className='text-[#FE4900] font-bold text-xl'>Our Vision</p>
+              <p className='mt-3'>At OrthoLuxe, our vision is to blend advanced technology with compassionate care to create a welcoming space. We aim to inspire confident, healthy smiles through innovation and personalized treatment.</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
