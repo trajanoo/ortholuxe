@@ -10,7 +10,7 @@ const treatments = [
     { title: "Braces", image: "/braces.png", tags: ["Dental Treatment", "Easy"] },
     { title: "Invisalign", image: "/invisalign.png", tags: ["Dental Treatment", "Moderate"] },
     { title: "Dentures", image: "/dentures.png", tags: ["Teeth Alignment", "Moderate"] },
-    { title: "Dental Implants", image: "/dentalimplants.png", tags: ["Teeth Alignment", "Easy"] },
+    { title: "Implants", image: "/dentalimplants.png", tags: ["Teeth Alignment", "Easy"] },
 ];
 
 export default function TreatmentsSlider() {
@@ -60,7 +60,7 @@ export default function TreatmentsSlider() {
                                 <div className="absolute inset-0 bg-black/20 rounded-2xl" />
 
                                 <div className="relative z-10 text-white">
-                                    <h3 className="text-2xl font-bold">{item.title}</h3>
+                                    <h3 className="text-2xl font-extralight text-black uppercase tracking-widest">{item.title}</h3>
 
                                     <div className="flex gap-3 mt-4 flex-wrap">
                                         {item.tags.map((tag, i) => (
@@ -85,7 +85,7 @@ export default function TreatmentsSlider() {
             </div>
             <div className="mt-6 h-1 w-full bg-gray-200 rounded-full overflow-hidden">
         <motion.div
-          className="h-full bg-gray-500"
+          className="h-full bg-[#02B2F8]"
           animate={{ width: `${progress * 100}%` }}
           transition={{ type: "spring", stiffness: 100, damping: 20 }}
         />

@@ -168,9 +168,7 @@ export default function Home() {
                 >
                   Contact
                 </a>
-                <button className="h-10 w-32 rounded-full bg-[#FE4900] hover:bg-[#FE4900]/80 cursor-pointer transition backdrop-blur-md text-white text-sm font-medium border border-white/30">
-                  Book a visit
-                </button>
+                
               </nav>
             </div>
             {/* Glass bar so the tooth shows through subtly */}
@@ -195,7 +193,7 @@ export default function Home() {
                 <div className="text-sm text-slate-700">Countries presence</div>
               </motion.div>
             </div>
-          </div> 
+          </div>
 
           <div className="absolute md:left-12 lg:left-36 2xl:left-52 top-1/2 -translate-y-1/2 -z-30">
             <div className='flex flex-col font-extrabold md:text-7xl 2xl:text-8xl'>
@@ -240,7 +238,7 @@ export default function Home() {
 
 
       {/* Services */}
-      <section id='services' className="relative h-screen w-full flex justify-center items-center text-white mt-10">
+      <section id='services' className="relative h-screen w-full flex justify-center items-center text-white mt-10 ">
         <div className='min-h-screen w-[85vw] flex flex-col 2xl:gap-16'>
           <div className='flex text-black justify-between h-52 items-center'>
             <div className='flex flex-col text-4xl 2xl:text-5xl font-extralight'>
@@ -248,8 +246,9 @@ export default function Home() {
               <span className='text-black'>Treatments</span>
             </div>
 
-            <div className='w-125 2xl:text-lg'>
-              <p>At <span className='font-bold'>OrthoLuxe</span>, we offer a wide range of treatments, from routine cleaning and fillings to advanced procedures like implants and cosmetic dentistry. Our goal is to provide personalized care for all your dental needs.</p>
+            <div className='w-125 2xl:text-lg mt-8'>
+              <p className='text-[#FE4900] text-xl uppercase tracking-widest'>Our services</p>
+              <p className='mt-3'>At OrthoLuxe, we offer a wide range of treatments, from routine cleaning and fillings to advanced procedures like implants and cosmetic dentistry. Our goal is to provide personalized care for all your dental needs.</p>
             </div>
           </div>
 
@@ -257,31 +256,52 @@ export default function Home() {
         </div>
       </section>
 
-      <section id='about' className='relative min-h-screen w-full flex justify-center text-white mt-10 border-t border-black'>
-        <div className="h-full w-[85vw] flex flex-col 2xl:gap-16">
+      <section className=" w-full mt-40 2xl:mt-15">
+        <div className="relative h-[40vh] w-full bg-gradient-to-r from-white to-[#C0EDFF] overflow-visible flex items-center justify-center">
+          <div className='mr-[600px] flex flex-col gap-5'>
+            <p className='text-5xl 2xl:text-6xl font-extrabold text-[#04B5FF]'><span className='text-black mr-2 font-light'>Book</span> Free Consultation</p>
+            <button className="h-16 w-44 rounded-full bg-[#FE4900] hover:bg-[#FE4900]/80 cursor-pointer transition backdrop-blur-md text-white text-sm font-light border border-white/30 uppercase tracking-widest ">
+                  Book now
+                </button>
+          </div>
+
+          <img src="/tooth.png" alt="Tooth" className="absolute right-1 bottom-[-40px] w-[600px] 2xl:w-[860px]"/>
+
+        </div>
+      </section>
+
+      <section id='about' className='relative min-h-screen w-full flex justify-center text-white mt-10 '>
+        <div className="h-full w-[85vw] flex flex-col ">
           <div className='flex text-black justify-between h-52 items-center'>
             <div className='flex flex-col text-4xl 2xl:text-5xl font-extralight'>
               <span className='text-gray-500'>About</span>
               <span className='text-black'><span className='text-cyan-600'>Ortho</span>Luxe</span>
             </div>
 
-            <div className='w-125 2xl:text-lg'>
-              <p className='text-[#FE4900] font-bold text-xl'>Our Vision</p>
+            <div className='w-125 2xl:text-lg mt-8'>
+              <p className='text-[#FE4900] text-xl uppercase tracking-widest'>Our Vision</p>
               <p className='mt-3'>At OrthoLuxe, our vision is to blend advanced technology with compassionate care to create a welcoming space. We aim to inspire confident, healthy smiles through innovation and personalized treatment.</p>
             </div>
           </div>
 
           <div className='grid grid-cols-12  h-full w-full gap-x-5 gap-y-5 grid-rows-3 2xl:mt-24'>
-            <div className="bg-gray-500 min-h-[180px] col-span-6 row-span-2 rounded-3xl"></div>
-            <div className="bg-gray-500 min-h-[180px] row-span-3 col-span-3 rounded-3xl"></div>
-            <div className="bg-gray-500 min-h-[180px] col-start-4 col-span-3  row-span-2 rounded-3xl"></div>
-            <div className="bg-gray-500 min-h-[180px] col-start-7 col-span-6 rounded-3xl bg-center bg-cover"
-            style={{ backgroundImage: `url('/braces.png')`}}
-            ></div>
-          </div>  
+
+            <div className="bg-gray-500 min-h-[180px] 2xl:min-h-[200px] col-span-6 2xl:col-span-5 2xl:col-start-2 row-span-2 rounded-3xl bg-center bg-cover shadow-xl" style={{ backgroundImage: `url('/dentalcare.png')` }}></div>
+
+            <div className="bg-gray-500 min-h-[180px] row-span-3 col-span-3 rounded-3xl bg-center bg-cover shadow-xl"
+              style={{ backgroundImage: `url('/dentureswoman.png')` }}></div>
+
+            <div className="bg-gray-500 min-h-[180px] col-start-4 col-span-3  row-span-2 rounded-3xl bg-center bg-cover shadow-xl"
+              style={{ backgroundImage: `url('/dentaltreatments.png')` }}></div>
+
+            <div className="bg-gray-500 min-h-[200px] col-start-7 col-span-6 2xl:col-span-5 rounded-3xl bg-center bg-cover shadow-xl"
+              style={{ backgroundImage: `url('/teethalignment.png')` }}
+            > </div>
+          </div>
 
         </div>
       </section>
+
     </div>
   );
 }
