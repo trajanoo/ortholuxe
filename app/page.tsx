@@ -168,7 +168,7 @@ export default function Home() {
                 >
                   Contact
                 </a>
-                
+
               </nav>
             </div>
             {/* Glass bar so the tooth shows through subtly */}
@@ -261,11 +261,11 @@ export default function Home() {
           <div className='mr-[600px] flex flex-col gap-5'>
             <p className='text-5xl 2xl:text-6xl font-extrabold text-[#04B5FF]'><span className='text-black mr-2 font-light'>Book</span> Free Consultation</p>
             <button className="h-16 w-44 rounded-full bg-[#FE4900] hover:bg-[#FE4900]/80 cursor-pointer transition backdrop-blur-md text-white text-sm font-light border border-white/30 uppercase tracking-widest ">
-                  Book now
-                </button>
+              Book now
+            </button>
           </div>
 
-          <img src="/tooth.png" alt="Tooth" className="absolute right-1 bottom-[-40px] w-[600px] 2xl:w-[860px]"/>
+          <img src="/tooth.png" alt="Tooth" className="absolute right-1 bottom-[-40px] w-[600px] 2xl:w-[860px]" />
 
         </div>
       </section>
@@ -301,6 +301,74 @@ export default function Home() {
 
         </div>
       </section>
+
+      <section id='contact' className='relative min-h-screen flex justify-center items-center'>
+        <div className='h-[90vh] w-[95vw] flex  bg-gradient-to-r from-[#E6E6E6] to-white  rounded-3xl overflow-hidden'>
+          <div className="flex h-full w-full mx-36">
+            <div className='w-1/2 h-full flex flex-col justify-center items-start gap-3 2xl:gap-5 text-sm 2xl:text-base'>
+              <h1 className='text-black text-5xl 2xl:text-5xl font-bold  tracking-tight'><span className='text-gray-500 font-light'>Book</span> Appointment</h1>
+
+              <div className='flex gap-5 mt-6 2xl:mt-10'>
+                <input type="text" placeholder='YOUR NAME' className='uppercase tracking-wide bg-white p-4 2xl:p-5 2xl:w-82 rounded-full text-gray-800' />
+                <input type="text" placeholder='CONTACT NO.' className='uppercase tracking-wide bg-white p-4 2xl:p-5 2xl:w-82 rounded-full text-gray-800' />
+                <input type="text" />
+              </div>
+
+              <div className='flex gap-5'>
+                <input type="text" placeholder='EMAIL ID' className='uppercase tracking-wide bg-white p-4 2xl:p-5 2xl:w-82 rounded-full text-gray-800' />
+                <input type="text" placeholder='YOUR AGE' className='uppercase tracking-wide bg-white p-4 2xl:p-5 2xl:w-82 rounded-full text-gray-800' />
+                <input type="text" />
+              </div>
+
+              <div className='flex flex-col gap-5'>
+                <input type="text" placeholder='SELECT SERVICES' className='uppercase tracking-wide bg-white p-4 2xl:p-5  rounded-full text-gray-800 w-130' />
+                <input type="text" placeholder='SELECT CLINIC' className='uppercase tracking-wide bg-white p-4 2xl:p-5  rounded-full text-gray-800 w-130' />
+              </div>
+
+              <div className='flex gap-5'>
+                <input type="date" placeholder='SELECT DATE' className='uppercase tracking-wide bg-white p-4 2xl:p-5 2xl:w-82 rounded-full text-gray-800' />
+                <input type="time" placeholder='SELECT TIME' className='uppercase tracking-wide bg-white p-4 2xl:p-5 2xl:w-82 rounded-full text-gray-800' />
+              </div>
+              <button className="2xl:h-16 h-14 2xl:w-72 w-52 rounded-full mt-4 bg-[#FE4900] hover:bg-[#FE4900]/80 cursor-pointer transition backdrop-blur-md text-white text-sm font-light border border-white/30 uppercase tracking-widest ">
+                Book Appointment
+              </button>
+            </div>
+
+            <div className='w-1/2 h-full flex justify-center items-center'>
+              <img src="mao.png" alt="Mao" className="max-w-full h-full object-contain" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="relative min-h-screen flex flex-col items-center overflow-hidden">
+
+        <div className="w-full overflow-hidden">
+          <div className="flex animate-marquee min-w-max justify-center items-center">
+            <h1 className="text-[7rem] 2xl:text-[10rem] text-[#55CFFE] font-black scale-y-[1.2] tracking-tight px-10 whitespace-nowrap">
+              ORTHOLUXE HEALTH VENTURES
+            </h1>
+
+            <h1 className="text-[8rem] 2xl:text-[10rem] text-[#55cefec7] font-black scale-y-[1.2] tracking-tight px-10 whitespace-nowrap">
+              ORTHOLUXE HEALTH VENTURES
+            </h1>
+          </div>
+        </div>
+
+        {/* CARD */}
+        <div className="
+    w-[90vw] md:w-[90vw]
+    2xl:h-[70vh] h-[66vh]
+    bg-gradient-to-r
+    from-[#C0EDFF]
+    to-white
+    rounded-2xl
+  " />
+
+      </section>
+
+
+
 
     </div>
   );
