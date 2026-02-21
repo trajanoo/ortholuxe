@@ -36,39 +36,32 @@ body {
   position: relative;
 }
 
-/* Custom Tailwind extensions */
 @layer utilities {
   .gradient-radial {
     background: radial-gradient(circle, var(--tw-gradient-stops));
   }
-
-  /* Smooth transitions */
+  
   .smooth-transition {
     @apply transition-all duration-300 ease-in-out;
   }
 
 
-  /* 3D perspective */
   .perspective {
     perspective: 1000px;
   }
 
-  /* Text shadow for luxury feel */
   .text-luxury {
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 
-  /* Glassmorphism effect */
   .glass {
     @apply bg-white/10 backdrop-blur-md border border-white/20 dark:bg-black/10 dark:border-white/10;
   }
 
-  /* Medical blue gradient */
   .gradient-medical {
     @apply bg-linear-to-r from-cyan-500 to-blue-600;
   }
 
-  /* Smooth scroll snap */
   .scroll-smooth {
     scroll-behavior: smooth;
   }

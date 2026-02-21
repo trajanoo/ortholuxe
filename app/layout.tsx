@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "OrthoLuxe - Premium Dental Excellence",
+  title: "OrthoLuxe",
   description: "Experience next-generation dental care with cutting-edge technology, precision diagnostics, and luxurious comfort. Transform your smile with confidence.",
   generators: ["Next.js"],
   keywords: "dental, cosmetic dentistry, implants, orthodontics, premium dental care",
